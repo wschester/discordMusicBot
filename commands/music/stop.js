@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'stop',
-	aliases: ['disconnect', 'leave'],
+	aliases: [],
 	inVoiceChannel: true,
 
 	execute(client, message) {

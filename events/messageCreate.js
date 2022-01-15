@@ -7,8 +7,7 @@ module.exports = (client, message) => {
 
 	const args = message.content.substring(PREFIX.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
-	const cmd = global.client.commands.get(command);
-	// || global.client.commands.find(coman => coman.aliases && coman.aliases.includes(command));
+	const cmd = global.client.commands.get(command) || global.client.commands.find(coman => coman.aliases && coman.aliases.includes(command));
 
 	if (cmd) {
 
