@@ -5,8 +5,8 @@ module.exports = (client, message) => {
 	if (message.author.bot || message.channel.type === 'dm') return;
 	if (message.content[0] !== PREFIX) return;
 
-	const args = message.content.substring(PREFIX.length).split(' ');
-	const command = args[0].toLowerCase();
+	const args = message.content.substring(PREFIX.length).trim().split(' ');
+	const command = args.shift().toLowerCase();
 	const cmd = global.client.commands.get(command);
 	// || global.client.commands.find(coman => coman.aliases && coman.aliases.includes(command));
 
@@ -20,6 +20,12 @@ module.exports = (client, message) => {
 			}
 		}
 
-		cmd.execute(global.client, message, args);
+		try {
+			cmd.execute(global.client, message, args);
+		}
+		catch (e) {
+			console.error(e);
+			message.channel.send(`${client.emotes.error} | Error: \`${e}\``);
+		}
 	}
 };
