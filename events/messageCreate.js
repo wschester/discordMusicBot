@@ -1,5 +1,5 @@
 module.exports = (client, message) => {
-	const PREFIX = '!';
+	const { PREFIX } = require('../config.json');
 
 	// removing any messages that arent commands
 	if (message.author.bot || message.channel.type === 'dm') return;
