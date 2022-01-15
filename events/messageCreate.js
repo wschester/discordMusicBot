@@ -24,7 +24,7 @@ module.exports = (client, message) => {
 		}
 		catch (e) {
 			console.error(e);
-			message.channel.send(`${client.emotes.error} | Error: \`${e}\``);
+			message.channel.send(` Error: \`${e}\``);
 		}
 	}
 };
