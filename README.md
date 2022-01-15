@@ -5,4 +5,5 @@ This will require the dependence and node js initiated to run. It will also need
 
 ## Dependences:
 - Discord.js
--
+- fs
+- 
