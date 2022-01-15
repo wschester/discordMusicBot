@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/wschester/discordMusicBot.git"
   },
-  "author": "",
+  "author": "wschester",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wschester/discordMusicBot/issues"
@@ -20,7 +20,10 @@
     "eslint": "^8.6.0"
   },
   "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@discordjs/voice": "^0.7.5",
     "discord.js": "^13.6.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "libsodium-wrappers": "^0.7.9"
   }
 }

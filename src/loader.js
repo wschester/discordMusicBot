@@ -1,7 +1,7 @@
 const { Collection } = require('discord.js');
 const { readdirSync } = require('fs');
 
-global.bot.commands = new Collection();
+global.client.commands = new Collection();
 
 console.log('Loading events:');
 
@@ -10,6 +10,19 @@ const events = readdirSync('./events/').filter(file => file.endsWith('.js'));
 for (const file of events) {
 	const event = require(`../events/${file}`);
 	console.log(`-> Loaded event ${file.split('.')[0]}`);
-	global.bot.on(file.split('.')[0], event.bind(null, global.client));
+	global.client.on(file.split('.')[0], event.bind(null, global.client));
 	delete require.cache[require.resolve(`../events/${file}`)];
 }
+
+console.log('loading commands...');
+
+readdirSync('./commands/').forEach(dirs => {
+	const commands = readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
+
+	for (const file of commands) {
+		const command = require(`../commands/${dirs}/${file}`);
+		console.log(`-> Loaded command ${command.name.toLowerCase()}`);
+		global.client.commands.set(command.name.toLowerCase(), command);
+		delete require.cache[require.resolve(`../commands/${dirs}/${file}`)];
+	}
+});
