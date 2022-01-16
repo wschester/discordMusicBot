@@ -14,7 +14,7 @@ module.exports = (client, message) => {
 		if (cmd.voiceChannel) {
 			if (!message.member.voice.channel) return message.channel.send('You are not in a voice channel!');
 
-			if (message.guild.me.voice.channel && message.memeber.voice.channel.id !== message.guild.mem.voice.channel.id) {
+			if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) {
 				return message.channel.send('You are not in the same voice cannel');
 			}
 		}
