@@ -1,6 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
 const { DisTube } = require('distube');
+const { SpotifyPlugin } = require('@distube/spotify');
 
 global.client = new Client({
 	intents: [
@@ -14,6 +15,7 @@ global.client = new Client({
 global.client.distube = new DisTube(global.client, {
 	leaveOnStop: false,
 	emitNewSongOnly: true,
+	plugins: [new SpotifyPlugin()],
 });
 
 require('./src/loader.js');
