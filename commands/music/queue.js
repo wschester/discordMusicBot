@@ -7,7 +7,7 @@ module.exports = {
 
 		if (!queue) return message.channel.send('There is nothing in the queue right now!');
 
-		const q = queue.songs.map((song, i) => `${i === 0 ? 'Playing:' : `${i}.`} ${song.name} - \`${song.formattedDuration}\``).join();
+		const q = queue.songs.map((song, i) => `${i === 0 ? 'Playing:' : `${i}.`} ${song.name} - \`${song.formattedDuration}\``).join('\n');
 
 		message.channel.send(`**Server Queue**\n${q}`);
 	},
