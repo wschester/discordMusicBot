@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'pause',
-	aliases: ['hold'],
+	name: 'resume',
+	aliases: ['unpause'],
 	inVoiceChannel: true,
 
 	execute(client, message) {
@@ -8,12 +8,9 @@ module.exports = {
 
 		if (!queue) return message.channel.send('There is nothing in the queue right now!');
 
-		if (queue.paused) {
-			queue.resume();
-			return message.channel.send('Resumed the song for you :)');
-		}
+		if (!queue.paused) return message.channel.send('Song is already playing');
 
-		queue.pause();
-		message.channel.send('Paused the song for you :)');
+		queue.resume();
+		return message.channel.send('Resumed the song for you :)');
 	},
 };
