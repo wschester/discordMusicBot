@@ -4,7 +4,7 @@ console.log('Loading DisTube Events...');
 
 client.distube.on('playSong', (queue, song) =>
 	queue.textChannel.send(
-		`${client.emotes.play} | Playing \`${song.name} - '${song.formattedDuration}\`\nRequested by: ${song.user}`,
+		`${client.emotes.play} | Playing \`${song.name} - ${song.formattedDuration}\``,
 	));
 
 client.distube.on('addSong', (queue, song) => {

@@ -10,7 +10,7 @@ module.exports = {
 
 		try {
 			queue.skip();
-			message.channel.send(`Skipped! Now playing: \`${queue.songs[0].name} - ${queue.songs[0].formatedDuration}\``);
+			message.channel.send('Skipped!');
 		}
 		catch (e) {
 			message.channel.send(`Error: ${e}`);
