@@ -21,7 +21,7 @@ global.client.distube = new DisTube(global.client, {
 
 global.client.emotes = emojis;
 
-require('./src/loader.js');
-require('./distubeEvents');
+require('./src/loader');
+require('./src/distubeEvents');
 
 global.client.login(token);
