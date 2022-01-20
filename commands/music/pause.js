@@ -10,10 +10,10 @@ module.exports = {
 
 		if (queue.paused) {
 			queue.resume();
-			return message.channel.send('Resumed the song for you :)');
+			return message.channel.send(`${global.client.emotes.play} | Resumed the song`);
 		}
 
 		queue.pause();
-		message.channel.send('Paused the song for you :)');
+		message.channel.send(`${global.client.emotes.pause} | Paused the song`);
 	},
 };

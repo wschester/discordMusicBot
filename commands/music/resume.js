@@ -11,6 +11,6 @@ module.exports = {
 		if (!queue.paused) return message.channel.send('Song is already playing');
 
 		queue.resume();
-		return message.channel.send('Resumed the song for you :)');
+		return message.channel.send(`${global.client.emotes.play} | Resumed the song`);
 	},
 };

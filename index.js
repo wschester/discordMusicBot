@@ -2,7 +2,7 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
 const { DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
-const emojis = require('./config.json');
+const emojis = require('./emoji.json');
 
 global.client = new Client({
 	intents: [
@@ -22,5 +22,6 @@ global.client.distube = new DisTube(global.client, {
 global.client.emotes = emojis;
 
 require('./src/loader.js');
+require('./distubeEvents');
 
 global.client.login(token);

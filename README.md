@@ -16,4 +16,5 @@ Bot can be started by typing into the terminal "node ." and closed by pressing "
 - @discordjs/voice
 - libsodium-wrappers
 - distube
+- @distube/spotify
 - fs
